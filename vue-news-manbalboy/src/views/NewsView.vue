@@ -1,19 +1,29 @@
 <template>
     <div>
-        news
+        <div v-for="user in this.users" v-bind:key="user">
+             {{user.id}}
+        </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
-
+    import { fetchNewsList } from '../api/index.js';
     export default {
+        data () {
+            return {
+                users : []
+            }
+        },
         created() {
-            axios.get('https://api.hnpwa.com/v0/news/1.json')
+            var vm = this;
+            fetchNewsList()
                 .then(function (response) {
                     console.log('gg >' , response);
+                    vm.users = response.data;
                 })
-                .catch(function (){})
+                .catch(function(err){
+                    console.log('str  >>>>> ', err);
+                })
         }
     }
 </script>
