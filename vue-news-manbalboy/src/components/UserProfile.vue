@@ -4,9 +4,9 @@
             <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-            <div> {{ info.id }} </div>
+            <div> {{ userInfo.id }} </div>
             <div class="time">
-                {{ info.created }}
+                {{ userInfo.created }}
             </div>
         </div>
     </div>
@@ -14,14 +14,14 @@
 
 <script>
     export default {
-        props : {
-            info : Object
-        }
-        // computed : {
-        //     userInfo(){ 
-        //         return this.$store.state.user;
-        //     }
+        // props : {
+        //     info : Object
         // },
+        computed : {
+            userInfo(){ 
+                return this.$store.state.user;
+            }
+        },
     }
 </script>
 

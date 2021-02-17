@@ -1,6 +1,6 @@
 <template>
     <div>
-        <user-profile v-bind:info="userInfo"></user-profile>
+        <user-profile></user-profile>
         <!-- <p>name : {{userInfo.id}}</p>
         <p>karma : {{userInfo.karma}}</p>
         <p>created : {{userInfo.created}}</p> -->
@@ -13,11 +13,11 @@
         components : {
             UserProfile
         },
-        computed : {
-            userInfo(){ 
-                return this.$store.state.user;
-            }
-        },
+        // computed : {
+        //     userInfo(){ 
+        //         return this.$store.state.user;
+        //     }
+        // },
         
         created() {
             const sId = this.$route.params.id;
