@@ -39,7 +39,7 @@ export const router = new VueRouter({
       },
 
       {
-        path: '/vue-newspage/user',
+        path: '/vue-newspage/user/:id',
         component: UserView,
       }
     ]

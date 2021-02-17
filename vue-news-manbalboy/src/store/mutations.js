@@ -9,6 +9,10 @@ export default  {
 
     SET_JOBS (state, oData) {
         state.jobs = oData
-    }
+    },
+
+    SET_USER (state, oData) {
+        state.user = oData
+    },
 
 }
