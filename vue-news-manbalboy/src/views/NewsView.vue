@@ -1,13 +1,12 @@
 <template>
     <div>
-        <div v-for="user in this.$store.state.news" v-bind:key="user">
-             {{user.id}}
+        <div v-for="(item,index) in this.$store.state.news" v-bind:key="index">
+             {{item.id}}
         </div>
     </div>
 </template>
 
 <script>
-    
     export default {
         created() {
            this.$store.dispatch('FETCH_NEWS');

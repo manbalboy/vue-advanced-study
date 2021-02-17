@@ -1,13 +1,12 @@
 <template>
     <div>
-        <div v-for="item in this.$store.state.jobs" v-bind:key="item">
+        <div v-for="item in this.$store.state.jobs" v-bind:key="item.id">
             {{item.id}}
         </div>
     </div>
 </template>
 
 <script>
-
     export default {
         created() {
             this.$store.dispatch('FETCH_JOBS');
