@@ -1,9 +1,10 @@
 <template>
     <div>
-        <user-profile></user-profile>
-        <!-- <p>name : {{userInfo.id}}</p>
-        <p>karma : {{userInfo.karma}}</p>
-        <p>created : {{userInfo.created}}</p> -->
+        <user-profile>
+            <div slot="username"> {{ userInfo.id }} </div>
+            <span slot="time">{{ 'joined ' + userInfo.created }}, </span>
+            <span slot="karma"> {{ userInfo.karma }} </span>
+        </user-profile>
     </div>
 </template>
 
@@ -13,11 +14,12 @@
         components : {
             UserProfile
         },
-        // computed : {
-        //     userInfo(){ 
-        //         return this.$store.state.user;
-        //     }
-        // },
+
+        computed : {
+            userInfo(){ 
+                return this.$store.state.user;
+            }
+        },
         
         created() {
             const sId = this.$route.params.id;
