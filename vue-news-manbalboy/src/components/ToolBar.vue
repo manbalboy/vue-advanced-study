@@ -2,11 +2,12 @@
     <div class="header">
         <img src="../assets/logo.svg" alt="logo" class="logo">
         <div class="floatR">
-            <router-link to="/news">News</router-link> |
-            <router-link to="/ask">Ask</router-link>  |
-            <router-link to="/jobs">Jobs</router-link> 
+            <router-link to="/vue-newspage/news">News</router-link> |
+            <router-link to="/vue-newspage/ask">Ask</router-link>  |
+            <router-link to="/vue-newspage/jobs">Jobs</router-link> 
         </div>
-        <div class="floatL">prod by manbalboy</div>
+        <div class="floatL">prod by manbalboy </div>
+        <img src="../assets/logo3.png" alt="logo" class="logo">
     </div>
 </template>
 
@@ -52,12 +53,12 @@
 
     .header .floatL {
        float: left;
-       width: 20%;
+       width: 40%;
        text-align: right;
     }
     .header .floatR {
        float: right;
-       width: 79%;
+       width: 59%;
        margin: 0;
        padding: 0;
     }

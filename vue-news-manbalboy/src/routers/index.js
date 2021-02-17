@@ -14,32 +14,32 @@ export const router = new VueRouter({
     mode: 'history',
     routes: [
       {
-        path: '/',
-        redirect: '/news' 
+        path: '/vue-newspage',
+        redirect: '/vue-newspage/news' 
       },
 
       {
-        path: '/news',
+        path: '/vue-newspage/news',
         component: NewsView,
       },
 
       {
-        path: '/ask',
+        path: '/vue-newspage/ask',
         component: AskView,
       },
 
       {
-        path: '/jobs',
+        path: '/vue-newspage/jobs',
         component: JobsView,
       },
 
       {
-        path: '/item',
+        path: '/vue-newspage/item',
         component: ItemView,
       },
 
       {
-        path: '/user',
+        path: '/vue-newspage/user',
         component: UserView,
       }
     ]
