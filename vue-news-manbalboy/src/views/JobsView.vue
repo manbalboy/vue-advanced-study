@@ -16,14 +16,9 @@
         },
 
         created() {
-            let vm = this;
             fetchJobsList() 
-            . then (response => {
-                vm.jobs = response.data;
-            }) 
-            . catch(err => {
-                console.log('str  >>>>> ',  err );
-            })
+            . then (response => this.jobs = response.data) 
+            . catch(err => console.log('err >>>>> ',  err ));
         },
     }
 </script>

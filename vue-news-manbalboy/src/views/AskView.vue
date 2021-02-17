@@ -16,14 +16,9 @@
         },
         // 라이프사이클 훅 mounted, beforeMount created ....
         created() {
-            let vm = this;
             fetchAskList()
-            .then(respons => {
-                vm.ask = respons.data;
-            })
-            .catch(err => {
-                console.log('str >>>>> ',  err);
-            });
+            .then(respons => this.ask = respons.data)
+            .catch(err => console.log('str >>>>> ',  err) );
         }
 
 

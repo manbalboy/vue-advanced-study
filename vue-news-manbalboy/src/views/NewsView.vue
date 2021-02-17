@@ -15,15 +15,9 @@
             }
         },
         created() {
-            var vm = this;
             fetchNewsList()
-                .then(function (response) {
-                    console.log('gg >' , response);
-                    vm.users = response.data;
-                })
-                .catch(function(err){
-                    console.log('str  >>>>> ', err);
-                })
+                .then(response =>this.users = response.data)
+                .catch(err => console.log('str  >>>>> ', err))
         }
     }
 </script>
