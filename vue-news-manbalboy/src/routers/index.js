@@ -20,16 +20,19 @@ export const router = new VueRouter({
 
       {
         path: '/vue-newspage/news',
+        name : 'news',
         component: NewsView,
       },
 
       {
         path: '/vue-newspage/ask',
+        name : 'ask',
         component: AskView,
       },
 
       {
         path: '/vue-newspage/jobs',
+        name : 'jobs',
         component: JobsView,
       },
 
