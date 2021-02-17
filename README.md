@@ -1,6 +1,5 @@
 # vue-newpage 구현 
 
-
 ## 소개 
 - 구현 DATA소개 
   1) 아래의 api data를 받아다 news, ask, jobs page 구성  
