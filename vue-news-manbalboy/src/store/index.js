@@ -27,9 +27,9 @@ export const store = new Vuex.Store({
             .catch(err=>console.log('err >>>>> ', err));
         },
 
-        FETCH_JOBS (context) {
+        FETCH_JOBS ({commit}) {
             fetchJobsList() 
-            . then (response => context.commit('SET_JOBS', response.data)) 
+            . then (({data}) => commit('SET_JOBS', data)) 
             . catch(err => console.log('err >>>>> ',  err ));
         }
     },
