@@ -6,7 +6,9 @@
             </a>
             <small>
                 {{item.time_ago}} by 
-                <router-link v-bind:to="`/vue-newspage/user/${item.user}`">{{item.user}}</router-link>
+                <router-link v-bind:to="`/vue-newspage/user/${item.user}`">
+                    {{item.user}}
+                </router-link>
             </small>
         </p>
     </div>

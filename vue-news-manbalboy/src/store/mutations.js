@@ -15,4 +15,8 @@ export default  {
         state.user = oData
     },
 
+    SET_ITEM (state, oData) {
+        state.item = oData
+    },
+
 }

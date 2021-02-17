@@ -34,7 +34,7 @@ export const router = new VueRouter({
       },
 
       {
-        path: '/vue-newspage/item',
+        path: '/vue-newspage/item/:id',
         component: ItemView,
       },
 
