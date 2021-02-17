@@ -1,9 +1,12 @@
 <template>
     <div class="header">
         <img src="../assets/logo.svg" alt="logo" class="logo">
-        <router-link to="/news">News</router-link> |
-        <router-link to="/ask">Ask</router-link>  |
-        <router-link to="/jobs">Jobs</router-link> 
+        <div class="floatR">
+            <router-link to="/news">News</router-link> |
+            <router-link to="/ask">Ask</router-link>  |
+            <router-link to="/jobs">Jobs</router-link> 
+        </div>
+        <div class="floatL">prod by manbalboy</div>
     </div>
 </template>
 
@@ -24,6 +27,7 @@
 
     .header .router-link-exact-active {
         color : #35495e ;
+        
     }
 
     .header a {
@@ -39,9 +43,24 @@
     .logo {
         width: 30px;
         margin-right: 18px;
+        
     }
 
     a {
         margin: 0 5px;
     }
+
+    .header .floatL {
+       float: left;
+       width: 20%;
+       text-align: right;
+    }
+    .header .floatR {
+       float: right;
+       width: 79%;
+       margin: 0;
+       padding: 0;
+    }
+
+    
 </style>
