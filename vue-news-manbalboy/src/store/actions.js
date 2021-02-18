@@ -2,7 +2,10 @@ import { fetchNewsList, fetchAskList , fetchJobsList, fetchUserInfo, fetchItemIn
 export default {
     FETCH_NEWS(context) {
         fetchNewsList()
-        .then(response => context.commit('SET_NEWS', response.data))
+        .then(response => {
+            context.commit('SET_NEWS', response.data)
+            return response;
+        })
         .catch(err => console.log('str  >>>>> ', err));
     },
 
