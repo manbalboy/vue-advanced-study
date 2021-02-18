@@ -4,6 +4,10 @@ const config = {
     baseUrl : 'https://api.hnpwa.com/v0/'
 }
 
+function fetchList(pageName) {
+    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+}
+
 function fetchNewsList() {
     return axios.get(`${config.baseUrl}news/1.json`);
 }
@@ -29,6 +33,7 @@ export {
     fetchAskList,
     fetchJobsList,
     fetchUserInfo,
-    fetchItemInfo
+    fetchItemInfo,
+    fetchList
 
 }

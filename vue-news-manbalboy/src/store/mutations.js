@@ -19,4 +19,8 @@ export default  {
         state.item = oData
     },
 
+    SET_LIST (state, oData) {
+        state.list = oData
+    },
+
 }
