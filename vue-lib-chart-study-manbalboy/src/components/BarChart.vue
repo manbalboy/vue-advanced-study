@@ -4,13 +4,12 @@
 </template>
 
 <script>
-    import Chart from 'chart.js';
     export default {
          mounted() {
             // <!-- ref 속성 -->
             let ctx = this.$refs.barChart.getContext('2d');
             // let ctx = document.getElementById('barChart').getContext('2d');
-            new Chart(ctx, {
+            new this.$_Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
