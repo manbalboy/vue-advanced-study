@@ -4,7 +4,9 @@
         <div class="floatR">
             <router-link to="/vue-newspage/news">News</router-link> |
             <router-link to="/vue-newspage/ask">Ask</router-link>  |
-            <router-link to="/vue-newspage/jobs">Jobs</router-link> 
+
+            <!-- 현재 2021-02-19 기준으로 API 오류있어서 ... 주석처리함 -->
+            <!-- <router-link to="/vue-newspage/jobs">Jobs</router-link>  -->
         </div>
         <div class="floatL">prod by manbalboy </div>
         <img src="../assets/logo3.png" alt="logo" class="logo">
