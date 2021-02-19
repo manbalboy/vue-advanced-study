@@ -1,12 +1,12 @@
 <template>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="barChart" width="400" height="400"></canvas>
 </template>
 
 <script>
     import Chart from 'chart.js';
     export default {
          mounted() {
-            let ctx = document.getElementById('myChart').getContext('2d');
+            let ctx = document.getElementById('barChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
