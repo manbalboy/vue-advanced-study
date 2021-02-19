@@ -12,7 +12,7 @@
         components : {
             ListItem,
         },
-
+    
        mixins : [ListMixin]
 
     }

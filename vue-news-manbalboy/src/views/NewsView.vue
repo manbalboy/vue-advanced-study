@@ -12,6 +12,8 @@
         components : {
             ListItem,
         },
+
+        
         mixins : [ListMixin]
     }
 </script>
