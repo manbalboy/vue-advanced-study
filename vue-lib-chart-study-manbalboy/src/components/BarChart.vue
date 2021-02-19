@@ -1,12 +1,15 @@
 <template>
-    <canvas id="barChart" width="400" height="400"></canvas>
+    <!-- ref 속성  이 컴포넌트 에서만 접근가능한 돔 접근 속성임 -->
+    <canvas ref="barChart" id="barChart" width="400" height="400"></canvas>
 </template>
 
 <script>
     import Chart from 'chart.js';
     export default {
          mounted() {
-            let ctx = document.getElementById('barChart').getContext('2d');
+            // <!-- ref 속성 -->
+            let ctx = this.$refs.barChart.getContext('2d');
+            // let ctx = document.getElementById('barChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
