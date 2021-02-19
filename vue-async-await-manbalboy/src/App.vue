@@ -19,6 +19,7 @@
                 items: [],
             }
         },
+
         methods: {
             loginUser() {
                 axios.get('https://jsonplaceholder.typicode.com/users/1')
@@ -39,11 +40,15 @@
             },
 
             async loginUser1 () {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
-                if(response.data.id === 1) {
-                    const list = await axios.get('https://jsonplaceholder.typicode.com/users/1');
-                    this.items = list.data;
-                }
+                try {
+                    const response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+                    if(response.data.id === 1) {
+                        const list = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+                        this.items = list.data;
+                    }
+                } catch(err) {
+                    console.log(err);
+                } 
             }
         },
     }
