@@ -1,55 +1,68 @@
 import { fetchNewsList, fetchAskList , fetchJobsList, fetchUserInfo, fetchItemInfo, fetchList} from '../api/index.js';
 export default {
-    FETCH_NEWS(context) {
-        fetchNewsList()
-        .then(response => {
-            context.commit('SET_NEWS', response.data)
+    async FETCH_NEWS(context) {
+        try{
+            const response = await fetchNewsList();
+            context.commit('SET_NEWS', response.data);
             return response;
-        })
-        .catch(err => {
-            console.log('err >>>>> ',  err )
+        } catch(err) {
+            console.log('FETCH_NEWS >>>>> ',  err )
             context.commit('SET_NEWS', []);
-        });
+        }
     },
 
-    FETCH_ASK (context) {
-        fetchAskList()
-        .then(response => context.commit('SET_ASK', response.data))
-        .catch(err => {
-            console.log('err >>>>> ',  err )
-            context.commit('SET_ASK', []);
-        });
-    },
-
-    FETCH_JOBS ({commit}) {
-        fetchJobsList() 
-        . then (({data}) => commit('SET_JOBS', data)) 
-        . catch(err => {
-            console.log('err >>>>> ',  err )
-            commit('SET_JOBS', []);
-        });
-    },
-
-    FETCH_USER ({commit}, sId) {
-        fetchUserInfo(sId) 
-        . then (({data}) => commit('SET_USER', data)) 
-        . catch(err => console.log('err >>>>> ',  err ));
-    },
-
-    FETCH_ITEM ({commit}, sId) {
-        fetchItemInfo(sId) 
-        . then (({data}) => commit('SET_ITEM', data)) 
-        . catch(err => console.log('err >>>>> ',  err ));
-    },
-
-    FETCH_LIST ({commit}, pageName) {
-        return fetchList(pageName)
-        . then ((response) => {
-            commit('SET_LIST', response.data);
-
+    async FETCH_ASK (context) {
+        try{
+            const response = await fetchAskList();
+            context.commit('SET_ASK', response.data);
             return response;
-        }) 
-        . catch(err => console.log('err >>>>> ',  err ));
+        } catch(err) {
+            console.log('FETCH_ASK >>>>> ',  err );
+            context.commit('FETCH_ASK', []);
+        }
+    },
+
+    async FETCH_JOBS ({commit}) {
+        try{
+            const response = await fetchJobsList();
+            commit('SET_JOBS', response.data);
+            return response;
+        } catch(err) {
+            console.log('FETCH_JOBS >>>>> ',  err );
+            commit('SET_JOBS', []);
+        }
+    },
+
+    async FETCH_USER ({commit}, sId) {
+        try{
+            const response = await fetchUserInfo(sId);
+            commit('SET_USER', response.data);
+            return response;
+        } catch(err) {
+            console.log('FETCH_USER >>>>> ',  err );
+        }
+       
+    },
+
+    async FETCH_ITEM ({commit}, sId) {
+        try{
+            const response = await fetchItemInfo(sId); 
+            commit('SET_ITEM', response.data);
+            return response;
+        } catch(err) {
+            console.log('FETCH_ITEM >>>>> ',  err );
+        }
+        
+    },
+
+    async FETCH_LIST ({commit}, pageName) {
+        try{
+            const response = await fetchList(pageName)
+            commit('SET_LIST', response.data);
+            return response;
+        } catch(err) {
+            commit('SET_LIST', []);
+        }
     }
 
 

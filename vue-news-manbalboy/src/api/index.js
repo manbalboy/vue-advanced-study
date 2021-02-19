@@ -4,28 +4,53 @@ const config = {
     baseUrl : 'https://api.hnpwa.com/v0/'
 }
 
-function fetchList(pageName) {
-    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+async function fetchList(pageName) {
+    try {
+        return await axios.get(`${config.baseUrl}${pageName}/1.json`);
+    } catch (error) {
+        console.log(' fetchAskList >>>>> ', error);
+    }
 }
 
-function fetchNewsList() {
-    return axios.get(`${config.baseUrl}news/1.json`);
+async function fetchNewsList() {
+    try {
+        return await axios.get(`${config.baseUrl}news/1.json`);
+    } catch (error) {
+        console.log(' fetchAskList >>>>> ', error);
+    }
 }
 
-function fetchAskList() {
-    return axios.get(`${config.baseUrl}ask/1.json`);
+async function fetchAskList() {
+    try {
+        return await axios.get(`${config.baseUrl}ask/1.json`);
+    } catch (error) {
+        console.log(' fetchAskList >>>>> ', error);
+    }
 }
 
-function fetchJobsList() {
-    return axios.get(`${config.baseUrl}jobs/1.json`);
+async function fetchJobsList() {
+    try {
+        return await axios.get(`${config.baseUrl}jobs/1.json`);
+    } catch (error) {
+        console.log(' fetchJobsList >>>>> ', error);
+    }
 }
 
-function fetchUserInfo(sId) {
-    return axios.get(`${config.baseUrl}user/${sId}.json`);
+async function fetchUserInfo(sId) {
+    try {
+        return await axios.get(`${config.baseUrl}user/${sId}.json`);
+    } catch (error) {
+        console.log(' fetchUserInfo >>>>> ', error);
+    }
+    
 }
 
-function fetchItemInfo(sId) {
-    return axios.get(`${config.baseUrl}item/${sId}.json`);
+async function fetchItemInfo(sId) {
+    try {
+        return await axios.get(`${config.baseUrl}item/${sId}.json`);
+    } catch (error) {
+        console.log(' fetchItemInfo >>>>> ', error);
+    }
 }
 
 
