@@ -10,46 +10,95 @@ import UserView from '../views/UserView.vue';
 // import CreateListView from '../views/CreateListView.js';
 
 
+import bus from '../utils/bus.js';
+import { store } from '../store/index.js';
+
+
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
     mode: 'history',
     routes: [
-      {
-        path: '/vue-newspage',
-        redirect: '/vue-newspage/news' 
-      },
+        {
+            path: '/vue-newspage',
+            redirect: '/vue-newspage/news' 
+        },
 
-      {
-        path: '/vue-newspage/news',
-        name : 'news',
-        // component: CreateListView('NewsView'),
-        component: NewsView,
-      },
+        {
+            path: '/vue-newspage/news',
+            name : 'news',
+            // component: CreateListView('NewsView'),
+            component: NewsView,
+            beforeEnter: (to, from, next) => {
+                bus.$emit('start:spinner');
 
-      {
-        path: '/vue-newspage/ask',
-        name : 'ask',
-        // component: CreateListView('AskView'),
-        component: AskView,
-      },
+                // setTimeout(()=> {
+                store.dispatch('FETCH_LIST', to.name)
+                    .then(() => {
+                        bus.$emit('end:spinner');
+                        next();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        bus.$emit('end:spinner');
+                    });
+                // }, 3000)
+            }
+        },
 
-      {
-        path: '/vue-newspage/jobs',
-        name : 'jobs',
-        // component: CreateListView('JobsView'),
-        component: JobsView,
-      },
+        {
+            path: '/vue-newspage/ask',
+            name : 'ask',
+            // component: CreateListView('AskView'),
+            component: AskView,
+            beforeEnter: (to, from, next) => {
+                bus.$emit('start:spinner');
 
-      {
-        path: '/vue-newspage/item/:id',
-        component: ItemView,
-      },
+                // setTimeout(()=> {
+                store.dispatch('FETCH_LIST', to.name)
+                    .then(() => {
+                        bus.$emit('end:spinner');
+                        next();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        bus.$emit('end:spinner');
+                    });
+                // }, 3000)
+            }
+        },
 
-      {
-        path: '/vue-newspage/user/:id',
-        component: UserView,
-      }
-    ]
-  })
+        {
+            path: '/vue-newspage/jobs',
+            name : 'jobs',
+            // component: CreateListView('JobsView'),
+            component: JobsView,
+            beforeEnter: (to, from, next) => {
+                bus.$emit('start:spinner');
+
+                // setTimeout(()=> {
+                store.dispatch('FETCH_LIST', to.name)
+                    .then(() => {
+                        bus.$emit('end:spinner');
+                        next();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        bus.$emit('end:spinner');
+                    });
+                // }, 3000)
+            }
+        },
+
+        {
+            path: '/vue-newspage/item/:id',
+            component: ItemView,
+        },
+
+        {
+            path: '/vue-newspage/user/:id',
+            component: UserView,
+        }
+        ]
+    })
