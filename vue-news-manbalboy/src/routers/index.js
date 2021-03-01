@@ -19,14 +19,15 @@ Vue.use(VueRouter);
 
 export const router = new VueRouter({
     mode: 'history',
+    base : process.env.NODE_ENV != 'production' ? process.env.VUE_APP_BASE_URL : "",
     routes: [
         {
-            path: '/vue-newspage',
-            redirect: '/vue-newspage/news' 
+            path: '/',
+            redirect: '/news' 
         },
 
         {
-            path: '/vue-newspage/news',
+            path: '/news',
             name : 'news',
             // component: CreateListView('NewsView'),
             component: NewsView,
@@ -47,7 +48,7 @@ export const router = new VueRouter({
         },
 
         {
-            path: '/vue-newspage/ask',
+            path: '/ask',
             name : 'ask',
             // component: CreateListView('AskView'),
             component: AskView,
@@ -68,7 +69,7 @@ export const router = new VueRouter({
         },
 
         {
-            path: '/vue-newspage/jobs',
+            path: '/jobs',
             name : 'jobs',
             // component: CreateListView('JobsView'),
             component: JobsView,
@@ -89,12 +90,12 @@ export const router = new VueRouter({
         },
 
         {
-            path: '/vue-newspage/item/:id',
+            path: '/item/:id',
             component: ItemView,
         },
 
         {
-            path: '/vue-newspage/user/:id',
+            path: '/user/:id',
             component: UserView,
         }
         ]

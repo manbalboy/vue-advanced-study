@@ -6,7 +6,7 @@
         </transition>
         <footer-comp></footer-comp>
         <spinner :loading="loadingStatus"></spinner>
-
+     
     </div>
 </template>
 
@@ -18,6 +18,11 @@
     import FooterComp from './components/FooterComp.vue';
     import bus from './utils/bus.js';
     export default {
+        head : {
+            title :{
+                inner: 'title',
+            }
+        },
         name: 'App',
         components : {
             ToolBar,
@@ -29,7 +34,6 @@
                 loadingStatus : false,
             }
         },
-
         methods: {
             startSpinner() {
                 this.loadingStatus = true;

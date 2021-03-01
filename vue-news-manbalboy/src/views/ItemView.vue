@@ -2,7 +2,7 @@
     <div>
         <section>
             <user-profile>
-                <router-link slot="username" v-bind:to="`/vue-newspage/user/${fetchedItem.user}`">
+                <router-link slot="username" v-bind:to="`/user/${fetchedItem.user}`">
                     {{ fetchedItem.user }} 
                 </router-link>
                 

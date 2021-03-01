@@ -1,4 +1,4 @@
 module.exports = {
-	publicPath: '/vue-newspage/',
+	publicPath: process.env.NODE_ENV != 'production' ? '/vue-newspage/' : "",
 	// outputDir : './vue-newspage',
 }

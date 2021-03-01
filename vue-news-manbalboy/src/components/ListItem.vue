@@ -16,7 +16,7 @@
                         </a>
                     </template>
                     <template v-else>
-                        <router-link v-bind:to="`/vue-newspage/item/${item.id}`">
+                        <router-link v-bind:to="`/item/${item.id}`">
                             {{item.title}} 
                         </router-link>
                     </template>
@@ -25,7 +25,7 @@
                 <small class="link-text">
 
                     {{item.time_ago}} by 
-                    <router-link v-if="item.user" v-bind:to="`/vue-newspage/user/${item.user}`">
+                    <router-link v-if="item.user" v-bind:to="`/user/${item.user}`">
                         {{item.user}}
                     </router-link>
 
