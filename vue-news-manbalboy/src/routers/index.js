@@ -19,7 +19,7 @@ Vue.use(VueRouter);
 
 export const router = new VueRouter({
     mode: 'history',
-    base : process.env.NODE_ENV != 'production' ? process.env.VUE_APP_BASE_URL : "",
+    base : process.env.NODE_ENV == 'production' ? process.env.VUE_APP_BASE_URL : "",
     routes: [
         {
             path: '/',

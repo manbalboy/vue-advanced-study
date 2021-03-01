@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    baseUrl : 'https://api.hnpwa.com/v0/'
+    baseUrl : process.env.VUE_APP_API_BASE_URL
 }
 
 async function fetchList(pageName) {
